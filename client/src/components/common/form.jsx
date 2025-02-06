@@ -1,8 +1,7 @@
-import { SelectContent, SelectTrigger, SelectValue, Value } from '@radix-ui/react-select';
 import React from 'react'
 import { Form } from 'react-router-dom'
 import { Input } from '../ui/input';
-import { Select, SelectItem } from '../ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 
@@ -30,12 +29,12 @@ const CommonForm = ({ formControls, formData, setFormData, onSubmit, buttonText 
         element = (<Select onValueChange={(value) => setFormData({ ...formData, [getControlItem.name]: value })} value={value}
         >
           <SelectTrigger className='w-full'>
-            <SelectValue placeholder={getControlItem.placeholder} />
+            <SelectValue placeholder={getControlItem.label} />
 
           </SelectTrigger>
           <SelectContent>
             {
-              getControlItem.options && getControlItem.options.length > 0 ? getControlItem.options.map(optionItem => <SelectItem key={optionItem.id} Value={optionItem.id}>{optionItem.label}</SelectItem>) : null
+              getControlItem.options && getControlItem.options.length > 0 ? getControlItem.options.map(optionItem => (<SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem>)) : null
             }
           </SelectContent>
         </Select>);
