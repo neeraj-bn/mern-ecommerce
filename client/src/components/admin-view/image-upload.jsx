@@ -110,7 +110,7 @@ function ProductImageUpload({
             </div>
         </div>
     );
-}
+};
 
 
 export default ProductImageUpload;
