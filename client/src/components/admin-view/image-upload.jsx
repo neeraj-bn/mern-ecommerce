@@ -3,6 +3,7 @@ import { Label } from '../ui/label'
 import { Input } from '../ui/input';
 import { FileIcon, UploadCloudIcon, XIcon } from 'lucide-react';
 import axios from 'axios';
+import { Skeleton } from '../ui/skeleton';
 
 function ProductImageUpload({
     imageFile,
@@ -45,7 +46,7 @@ function ProductImageUpload({
     }
 
     async function uploadImageToCloudinary() {
-        setImageLoadingState(true);
+        setImageLoadingState(false);
         const data = new FormData();
         data.append('my_file', imageFile)
         const response = await axios.post('http://localhost:5000/api/admin/products/upload-image', data)

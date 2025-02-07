@@ -26,8 +26,8 @@ const handleImageUpload = async (req, res) => {
 //Add new product
 const addProduct = async (req, res) => {
     try {
-        const { image, title, description, category, brand, price, sellPrice, totslStock } = req.body;
-        const newlyCreatedProduct = new Product({ image, title, description, category, brand, price, sellPrice, totslStock })
+        const { image, title, description, category, brand, price, salePrice, totalStock } = req.body;
+        const newlyCreatedProduct = new Product({ image, title, description, category, brand, price, SalePrice: salePrice, TotalStock: totalStock })
         await newlyCreatedProduct.save();
         res.status(201).json({
             success: true,
