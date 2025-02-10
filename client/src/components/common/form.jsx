@@ -1,15 +1,17 @@
 import React from 'react'
-import { Form } from 'react-router-dom'
 import { Input } from '../ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 
-const CommonForm = ({ formControls, formData, setFormData, onSubmit, buttonText }) => {
+const CommonForm = ({ formControls, formData, setFormData, onSubmit, buttonText,isBtmDisbled }) => {
+  console.log("Updated formData:", formData);
+
   function renderInputsByComponentType(getControlItem) {
     let element = null;
 
     const value = formData[getControlItem.name] || ''
+
     switch (getControlItem.componentType) {
       case 'input':
         element = (<Input
@@ -83,7 +85,7 @@ const CommonForm = ({ formControls, formData, setFormData, onSubmit, buttonText 
           </div>)
         }
       </div>
-      <Button type='submit' className='mt-2 w-full'>{buttonText || 'Submit'}</Button>
+      <Button disabled ={isBtmDisbled} type='submit' className='mt-2 w-full'>{buttonText || 'Submit'}</Button>
     </form>
   )
 }

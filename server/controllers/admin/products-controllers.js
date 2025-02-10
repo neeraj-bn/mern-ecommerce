@@ -26,8 +26,8 @@ const handleImageUpload = async (req, res) => {
 //Add new product
 const addProduct = async (req, res) => {
     try {
-        const { image, title, description, category, brand, price, salePrice, totalStock } = req.body;
-        const newlyCreatedProduct = new Product({ image, title, description, category, brand, price, SalePrice: salePrice, TotalStock: totalStock })
+        const { image, title, description, category, brand, price, SalePrice, TotalStock } = req.body;
+        const newlyCreatedProduct = new Product({ image, title, description, category, brand, price, SalePrice: SalePrice, TotalStock: TotalStock })
         await newlyCreatedProduct.save();
         res.status(201).json({
             success: true,
@@ -71,7 +71,8 @@ const fetchAllProducts = async (req, res) => {
 const editProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        const { image, title, description, category, brand, price, sellPrice, totslStock } = req.body;
+        const { image, title, description, category, brand, price, SalePrice, TotalStock } = req.body;
+        console.log("Backend test", req.body)
 
         const findProduct = await Product.findById(id);
         if (!findProduct) return res.status(404).json({
@@ -85,9 +86,9 @@ const editProduct = async (req, res) => {
         findProduct.category = category || findProduct.category
         findProduct.brand = brand || findProduct.brand
         findProduct.price = price || findProduct.price
-        findProduct.SalePrice = SalePrice || findProduct.SalePrice
+        findProduct.SalePrice = SalePrice
         findProduct.TotalStock = TotalStock || findProduct.TotalStock
-        findProduct.image = findProduct.title
+        findProduct.image = findProduct.image
 
         await findProduct.save();
 
