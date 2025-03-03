@@ -1,6 +1,6 @@
 # ShopEase Ecommerce (2024 – 2025)
 
-Welcome to **ShopEase Ecommerce**, a full-stack ecommerce platform designed to provide a seamless and efficient shopping experience. This project was built using modern web technologies, including React, Redux Toolkit, Tailwind CSS, and MongoDB. Below, you'll find all the necessary information to get started with the project.
+Welcome to **ShopEase Ecommerce**, a full-stack ecommerce platform designed to provide a seamless and efficient shopping experience. This project was built using modern web technologies, including React, Redux Toolkit, Tailwind CSS, shadcn/ui, and MongoDB. Below, you'll find all the necessary information to get started with the project.
 
 ---
 
@@ -11,13 +11,14 @@ Welcome to **ShopEase Ecommerce**, a full-stack ecommerce platform designed to p
 - **PayPal Integration**: Secure and reliable payment processing.
 - **Optimized Performance**: Achieved a 20% performance boost by optimizing media loading with Cloudinary and reducing load times by 65%.
 - **State Management**: Improved client-side state management using Redux Toolkit.
+- **Modern UI Components**: Built with **shadcn/ui** for a sleek and responsive user interface.
 - **Scalable Backend**: Built with MongoDB for a scalable and efficient shopping experience.
 
 ---
 
 ## Technologies Used
 
-- **Frontend**: React, Redux Toolkit, Tailwind CSS
+- **Frontend**: React, Redux Toolkit, Tailwind CSS, shadcn/ui
 - **Backend**: Node.js, Express.js, MongoDB
 - **Authentication**: JWT (JSON Web Tokens)
 - **Payment Gateway**: PayPal
